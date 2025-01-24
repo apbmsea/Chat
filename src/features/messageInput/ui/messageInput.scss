@@ -1,0 +1,31 @@
+.input-container {
+  display: flex;
+  align-items: center;
+  background-color: #1e1e1e;
+  padding: 5px 10px;
+  width: 80vw;
+  max-width: 2102rem;
+}
+
+.input-container input {
+  flex: 1;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  margin-right: 10px;
+}
+
+.input-container .send-button {
+  background: none;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.input-container .send-button img {
+  width: 20px;
+  height: 20px;
+  filter: invert(100%);
+}

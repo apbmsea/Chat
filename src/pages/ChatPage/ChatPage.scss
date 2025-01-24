@@ -1,0 +1,8 @@
+.chat-page{
+  position:relative;
+  display: flex;
+  .message-input{
+    position:absolute;
+    bottom:0;
+  }
+}

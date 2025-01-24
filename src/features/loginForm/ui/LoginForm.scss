@@ -1,0 +1,64 @@
+.login {
+  height: 100vh;
+  background: linear-gradient(-45deg, #1e1e1e, #1d2935, #252525, #49274c);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-form{
+    height: 40rem;
+    width: 40rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 4rem;
+    gap: 2rem;
+    background-color: #1e1e1e;
+
+    h1{
+      color: white;
+      font-size: 3rem;
+    }
+
+    input{
+      padding: 1rem;
+      width: 30rem;
+      height: 5rem;
+      border-radius: 1rem;
+      border: none;
+      outline: none;
+    }
+
+    select{
+      padding: 1rem;
+      width: 30rem;
+      height: 5rem;
+      border-radius: 1rem;
+      border: none;
+      outline: none;
+    }
+
+    button{
+      margin-top: 2rem;
+      width: 30rem;
+      height: 5rem;
+      border-radius: 2rem;
+      border: none;
+    }
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
