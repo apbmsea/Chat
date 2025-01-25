@@ -25,9 +25,11 @@ const api = {
 		const response = await $api.post('/register', state);
 		return response.data;
 	},
+	logout: async (username: string) => {
+		await $api.post('/logout', username);
+	},
 	sendMessage: async (username: string, message: string) => {
-		const response = await $api.post('/send', username, message);
-		return response.data;
+		await $api.post('/send', username, message);
 	}
 };
 

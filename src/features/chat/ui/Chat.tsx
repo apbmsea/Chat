@@ -42,7 +42,7 @@ const Chat: React.FC = () => {
 				<ul className='chat-list'>
 					{messages.map((msg, index) => (
 						<li className="chat-list-item" key={index}>
-							<i>{msg.username}:</i> {msg.message}
+							<i>{msg.username}:</i> <div className="message">{msg.message}</div>
 						</li>
 					))}
 				</ul>

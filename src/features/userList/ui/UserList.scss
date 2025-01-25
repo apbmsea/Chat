@@ -2,6 +2,10 @@
   height: 100vh;
   width: 20vw;
   background-color: #151414;
+  position:relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &-header{
     font-size: 2.5rem;
@@ -21,7 +25,20 @@
     color: white;
     font-size: 24px;
     padding-top: 2rem;
-    padding-left: 2rem;
     text-align: left;
+  }
+
+  button{
+    margin-top: 2rem;
+    width: 30rem;
+    height: 5rem;
+    border-radius: 2rem;
+    border: none;
+    position: absolute;
+    bottom: 2rem;
+
+    &:hover{
+      background-color: #cfc4c4;
+    }
   }
 }

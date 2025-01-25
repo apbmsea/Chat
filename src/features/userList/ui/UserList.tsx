@@ -4,6 +4,18 @@ import api from '../../../shared/api/instance.ts';
 
 const UserList: React.FC = () => {
 	const [users, setUsers] = useState(['Alex', 'Kim', 'Mike']);
+
+	const handleCLick = async () => {
+		try {
+			const { username } = JSON.parse(localStorage.getItem('user'));
+			await api.logout(username);
+			localStorage.removeItem('user');
+			window.location.href = '/';
+		} catch (e) {
+			console.error(e);
+		}
+	}
+
 	const fetchUsers= async () =>{
 		try	{
 			const response = await api.getUsersList()
@@ -33,6 +45,7 @@ const UserList: React.FC = () => {
 					<li className="user-list-item" key={index}>{user}</li>
 				))}
 			</ul>
+			<button onClick={handleCLick}>Выйти из чата</button>
 		</div>
 	);
 };
