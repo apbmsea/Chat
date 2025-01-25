@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './messageInput.scss'
 import api from '../../../shared/api/instance.ts';
+import axios from 'axios';
 
 const MessageInput: React.FC = () => {
 	const [message, setMessage] = useState('');
@@ -10,7 +11,7 @@ const MessageInput: React.FC = () => {
 		const { username } = JSON.parse(localStorage.getItem('user'));
 
 		try	{
-			await api.sendMessage(username, message);
+			await axios.post('http://10.4.3.155:3000/api/chat/send', {username, message});
 			setMessage('');
 		} catch (error) {
 			console.error(error);

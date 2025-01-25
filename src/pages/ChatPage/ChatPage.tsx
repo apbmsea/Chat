@@ -5,6 +5,8 @@ import Chat from '../../features/chat/ui/Chat.tsx';
 import MessageInput from '../../features/messageInput/ui/messageInput.tsx';
 
 const ChatPage: React.FC = () => {
+
+
 	return (
 		<div className="chat-page">
 			<UserList/>

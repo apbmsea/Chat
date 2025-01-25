@@ -1,11 +1,11 @@
 import axios from 'axios';
 import IUser from '../../app/types/IUser.ts';
 
-export let BASE_URL = 'http://localhost:3000';
-const path = '/api/chat';
+export let BASE_URL = 'http://10.4.3.155:3000/api/chat';
+
 
 const $api = axios.create({
-	baseURL: BASE_URL + path
+	baseURL: BASE_URL
 });
 
 export const setBaseUrl = (url: string) => {
@@ -26,10 +26,10 @@ const api = {
 		return response.data;
 	},
 	logout: async (username: string) => {
-		await $api.post('/logout', username);
+		await $api.delete(`/logout/${username}`, username);
 	},
 	sendMessage: async (username: string, message: string) => {
-		await $api.post('/send', username, message);
+		await $api.post('/send', { username, message });
 	}
 };
 

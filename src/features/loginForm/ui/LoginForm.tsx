@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import api from '../../../shared/api/instance.ts';
 import './LoginForm.scss'
-import { setBaseUrl } from '../../../shared/api/instance.ts';
+
 
 const LoginForm: React.FC = () => {
 	const [state, setState] = useState({
@@ -9,23 +9,14 @@ const LoginForm: React.FC = () => {
 		username: ''
 	});
 
-	const [server, setServer] = useState('https://server1.example.com'); // По умолчанию выбран первый сервер
-
-	const handleServerChange = (e) => {
-		const selectedServer = e.target.value;
-		setServer(selectedServer);
-		setBaseUrl(selectedServer); // Обновляем BASE_URL
-	};
-
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
+			console.log('1');
 			const response = await api.register(state);
-
-			if (response.status < 400) {
+			console.log('2');
 				localStorage.setItem('user', JSON.stringify(state));
 				window.location.href = '/chat';
-			}
 		} catch (error) {
 			console.error(error);
 		}
@@ -49,11 +40,6 @@ const LoginForm: React.FC = () => {
 					placeholder='Никнейм'
 					type='text'
 				/>
-				<select value={server} onChange={handleServerChange}>
-					<option value="http://localhost:3000">Сервер 1</option>
-					<option value="http://localhost:3000">Сервер 2</option>
-					<option value="http://localhost:3000">Сервер 3</option>
-				</select>
 				<button type='submit'>Войти</button>
 			</form>
 		</div>

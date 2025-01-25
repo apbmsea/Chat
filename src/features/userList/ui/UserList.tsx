@@ -3,7 +3,7 @@ import './UserList.scss'
 import api from '../../../shared/api/instance.ts';
 
 const UserList: React.FC = () => {
-	const [users, setUsers] = useState(['Alex', 'Kim', 'Mike']);
+	const [users, setUsers] = useState([]);
 
 	const handleCLick = async () => {
 		try {
@@ -28,7 +28,7 @@ const UserList: React.FC = () => {
 	useEffect(() => {
 		fetchUsers();
 
-		const interval = setInterval(() => fetchUsers(), 1000);
+		const interval = setInterval(fetchUsers, 1000);
 
 		return () => {
 			clearInterval(interval);
@@ -42,7 +42,7 @@ const UserList: React.FC = () => {
 			</div>
 			<ul className="user-list">
 				{users.map((user, index) => (
-					<li className="user-list-item" key={index}>{user}</li>
+					<li className="user-list-item" key={index}>{user.username}</li>
 				))}
 			</ul>
 			<button onClick={handleCLick}>Выйти из чата</button>

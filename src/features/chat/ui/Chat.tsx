@@ -28,7 +28,7 @@ const Chat: React.FC = () => {
 	useEffect(() => {
 		fetchMessages();
 
-		const interval = setInterval(() => fetchMessages(), 1000);
+		const interval = setInterval(fetchMessages, 1000);
 
 		return () => {
 			clearInterval(interval);
