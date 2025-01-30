@@ -1,7 +1,7 @@
 import axios from 'axios';
 import IUser from '../../app/types/IUser.ts';
 
-export let BASE_URL = 'http://10.4.3.155:3000/api/chat';
+export let BASE_URL = 'http://10.3.6.238:3000/api/chat';
 
 
 const $api = axios.create({
@@ -30,6 +30,9 @@ const api = {
 	},
 	sendMessage: async (username: string, message: string) => {
 		await $api.post('/send', { username, message });
+	},
+	sendPrivateMessage: async (username: string, message: string, name: string) => {
+		await $api.post('/sendPrivate', { username, message, name });
 	}
 };
 

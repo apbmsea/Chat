@@ -1,8 +1,14 @@
-.chat-page{
-  position:relative;
+.chat-page {
   display: flex;
-  .message-input{
-    position:absolute;
-    bottom:0;
+  .chat-block-1 {
+    display: flex;
+    flex-direction: column;
+  }
+  .main-chat{
+    display: flex;
+    .message-input{
+      position:absolute;
+      bottom:0;
+    }
   }
 }

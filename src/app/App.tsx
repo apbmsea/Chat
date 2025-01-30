@@ -9,6 +9,7 @@ function App() {
     <Routes>
       <Route path="/" element={<LoginPage/>} />
       <Route path="/chat" element={<ChatPage/>} />
+      <Route path="/chat/:name" element={<ChatPage/>} />
     </Routes>
   )
 }

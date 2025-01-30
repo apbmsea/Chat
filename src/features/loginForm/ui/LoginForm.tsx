@@ -12,9 +12,7 @@ const LoginForm: React.FC = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			console.log('1');
 			const response = await api.register(state);
-			console.log('2');
 				localStorage.setItem('user', JSON.stringify(state));
 				window.location.href = '/chat';
 		} catch (error) {
