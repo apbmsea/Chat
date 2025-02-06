@@ -1,4 +1,5 @@
-import api from "../../../shared/api/instance";
+import api from '../../../shared/api/instance.ts';
+import React from 'react';
 import './Logout.scss'
 
 const Logout: React.FC = () => {

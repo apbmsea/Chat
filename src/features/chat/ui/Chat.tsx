@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { BASE_URL } from '../../../shared/api/instance.ts';
+import api, { BASE_URL } from '../../../shared/api/instance.ts';
 import './Chat.scss';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
 
 const Chat: React.FC = () => {
 
@@ -10,7 +9,133 @@ const Chat: React.FC = () => {
 		{
 			username: '',
 			message: 'Чат пустой...'
-		}
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+		{
+			username: '',
+			message: 'Чат пустой...'
+		},
+
 	]);
 
 	const { sender } = JSON.parse(localStorage.getItem('user'));
@@ -19,11 +144,7 @@ const Chat: React.FC = () => {
 
 	const fetchMessages= async () =>{
 		try	{
-			const response = await axios.get('http://10.3.6.238:3000/api/chat/' + name, {
-				headers: {
-					'username': sender
-				}	
-			})
+			const response = await api.getMessagesList()
 			setMessages(response);
 		} catch (error) {
 			console.error(error);

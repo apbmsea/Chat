@@ -1,0 +1,118 @@
+$bg-color: #1a1a2e;
+$modal-bg: #16213e;
+$text-color: #e0e0e0;
+$accent: #0f3460;
+$border-color: #0f3460;
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: $modal-bg;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: $text-color;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  h2 {
+    text-align: center;
+  }
+
+  input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid $border-color;
+    background: $bg-color;
+    color: $text-color;
+    border-radius: 4px;
+  }
+
+  .user-input {
+    display: flex;
+    gap: 8px;
+
+    input {
+      flex: 1;
+    }
+
+    button {
+      background: $accent;
+      color: white;
+      padding: 8px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: 0.3s;
+      &:hover {
+        background: darken($accent, 10%);
+      }
+    }
+  }
+
+  .selected-users {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    .user-tag {
+      background: $accent;
+      padding: 5px 10px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      button {
+        background: none;
+        border: none;
+        color: $text-color;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+
+    button {
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      border: none;
+      transition: 0.3s;
+    }
+
+    .cancel {
+      background: #e74c3c;
+      color: white;
+      &:hover {
+        background: #c0392b;
+      }
+    }
+
+    .submit {
+      background: #2ecc71;
+      color: white;
+      &:hover {
+        background: #27ae60;
+      }
+    }
+  }
+}

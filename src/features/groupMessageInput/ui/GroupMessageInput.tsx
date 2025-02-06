@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import './messageInput.scss'
-import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import api from '../../../shared/api/instance.ts';
 
-const MessageInput: React.FC = () => {
-	const { name } = useParams()
+const GroupMessageInput: React.FC = () => {
+	const { group } = useParams()
 
 	const [message, setMessage] = useState('');
 
@@ -13,7 +12,7 @@ const MessageInput: React.FC = () => {
 		const { username } = JSON.parse(localStorage.getItem('user'));
 
 		try	{
-			await axios.post('http://10.4.3.155:3000/api/chat/send', {username, message});
+			await api.sendGroupMessage(username, group, message)
 			setMessage('');
 		} catch (error) {
 			console.error(error);
@@ -38,4 +37,4 @@ const MessageInput: React.FC = () => {
 	);
 };
 
-export default MessageInput;
+export default GroupMessageInput;

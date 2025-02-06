@@ -1,11 +1,11 @@
-.chats{
-    height: 95vh;
+.chats {
+    min-height: 10vh;
     width: 20vw;
     background-color: #1e1e1e;
     display: flex;
     flex-direction: column;
-    
-    &-title{
+
+    &-title {
         border: 1px solid #413939;
         color: #eee6e6;
         font-size: 2rem;
@@ -16,10 +16,12 @@
         text-align: center;
     }
 
-    &-list{
+    &-list {
         list-style-type: none;
+        max-height: 40vh;
+        overflow-y: auto;
 
-        &-item{
+        &-item {
             cursor: pointer;
             border: 1px solid #413939;
             color: #eee6e6;
@@ -30,4 +32,17 @@
             background-color: #1d2935;
         }
     }
+}
+
+.chats-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chats-list::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+}
+
+.chats-list::-webkit-scrollbar-thumb:hover {
+    background: #777;
 }

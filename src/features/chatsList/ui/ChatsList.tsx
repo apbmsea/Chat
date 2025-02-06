@@ -18,11 +18,23 @@ const ChatsList: React.FC = () => {
         },
         {
             username: "Anya"
-        }
+        },
+			{
+				username: "Общий чат"
+			},
+			{
+				username: "Mike"
+			},
+			{
+				username: "Andrew"
+			},
+			{
+				username: "Anya"
+			}
     ])
 
     const handleClick = (name: string) => {
-        navigate("/chat/" + name)
+        navigate("/chat/private" + name)
     }
 
     const fetchChats= async () =>{

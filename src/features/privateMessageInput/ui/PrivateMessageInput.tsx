@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
-import './messageInput.scss'
-import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import api from '../../../shared/api/instance.ts';
 
-const MessageInput: React.FC = () => {
+const PrivateMessageInput: React.FC = () => {
 	const { name } = useParams()
+	const receiverUsername = name
 
 	const [message, setMessage] = useState('');
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 		const { username } = JSON.parse(localStorage.getItem('user'));
+		const senderUsername = username;
 
 		try	{
-			await axios.post('http://10.4.3.155:3000/api/chat/send', {username, message});
+			await api.sendPrivateMessage(senderUsername, receiverUsername, message)
 			setMessage('');
 		} catch (error) {
 			console.error(error);
@@ -38,4 +39,4 @@ const MessageInput: React.FC = () => {
 	);
 };
 
-export default MessageInput;
+export default PrivateMessageInput;
